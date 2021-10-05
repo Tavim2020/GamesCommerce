@@ -23,11 +23,11 @@ export const GlobalStorage = ({children}) => {
     const [frete, setFrete] = React.useState('');
     const [confirmLogOut, setConfirmLogOut] = React.useState(false);
     const [avatar, setAvatar] = React.useState('');
+    const [valorDasCompras, setValorDasCompras] = React.useState('');
 
 
     const [total, setTotal] = React.useState('');
     
-
 
     
 
@@ -71,6 +71,8 @@ export const GlobalStorage = ({children}) => {
             setAvatar,
             total, 
             setTotal,
+            valorDasCompras, 
+            setValorDasCompras,
         }}>
             {children}
         </GlobalContext.Provider>

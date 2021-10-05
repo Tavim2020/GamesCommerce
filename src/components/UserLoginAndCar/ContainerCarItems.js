@@ -1,25 +1,29 @@
 import React from 'react';
+
 import { GlobalContext } from '../../Context/GlobalContext';
-import ArrayImages from '../../arraysUsers/ArrayImages';
-import removeItem from '../../assets/remove.png';
 import { retornandoIdCapa } from '../../HoksAndFunctions/FunctionReturnIdCap';
 import { ContainerCarItemsDiv } from './style/StyleCarContainer';
+
+import ArrayImages from '../../arraysUsers/ArrayImages';
+import IconremoveItem from '../../assets/remove.png';
 import ButtonCheckOut from '../Buttons/ButtonCheckOut';
 
 const ContainerCarItems = () => {
 
     const { countCar, setCountCar, arrayCar, frete,
-         clickedInCar, setFrete, total, setTotal } = React.useContext(GlobalContext);
+         clickedInCar, setFrete, total, setTotal, valorDasCompras, setValorDasCompras, 
+        } = React.useContext(GlobalContext);
 
+   
 
-    setTotal(Number(arrayCar.reduce((acc, item) => 
-    acc + item.price, 0).toFixed(2))
-    + Number((10 * arrayCar.length).toFixed(2)));
-
-    const valorDasCompras = arrayCar.reduce((acc, item) => 
-    acc + item.price, 0).toFixed(2);
-
-    setFrete(10 * arrayCar.length.toFixed(2));
+         setTotal(Number(arrayCar.reduce((acc, item) => 
+         acc + item.price, 0).toFixed(2))
+         + Number((10 * arrayCar.length).toFixed(2)));
+     
+         setValorDasCompras(arrayCar.reduce((acc, item) => 
+         acc + item.price, 0).toFixed(2));
+     
+         setFrete(10 * arrayCar.length.toFixed(2));
 
 
     function removeItemArray(event){
@@ -39,7 +43,8 @@ const ContainerCarItems = () => {
                         <div className='wrapper' key={produtos.id + index}>
                             <div className='listProducts' >
                                 <div className='imageContainer'>
-                                    <img src={ArrayImages[retornandoIdCapa(produtos)]} alt={produtos.name} />
+                                    <img src={ArrayImages[retornandoIdCapa(produtos)]} 
+                                    alt={produtos.name} />
                                 </div>
 
                                 <div className='titleAndPrice'>
@@ -49,7 +54,7 @@ const ContainerCarItems = () => {
                                     <div className='remove'>
                                         <img 
                                         id={index} 
-                                        src={removeItem} 
+                                        src={IconremoveItem} 
                                         alt={'Remove Item'} 
                                         onClick={removeItemArray}/>
                                     </div>
@@ -76,7 +81,8 @@ const ContainerCarItems = () => {
                             <h4>Frete:</h4>
 
                             <strong>
-                            {valorDasCompras <= 250 ? 'R$ ' : ''} {valorDasCompras <= 250 ? frete : 'Gratis'}
+                            {valorDasCompras <= 250 ? 'R$ ' : ''} 
+                            {valorDasCompras <= 250 ? frete : 'Gratis'}
                             </strong>
                         </div>
                     )}
@@ -89,7 +95,8 @@ const ContainerCarItems = () => {
                         </h6>
 
                         <strong>
-                            R$ {total && valorDasCompras <= 250 ? total.toFixed(2) : total - frete.toFixed(2)}
+                            R$ {total && valorDasCompras <= 250 ? 
+                            total.toFixed(2) : total - frete.toFixed(2)}
                         </strong>
 
                     </div>

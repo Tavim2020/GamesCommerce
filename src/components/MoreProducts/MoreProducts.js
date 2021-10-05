@@ -42,34 +42,35 @@ const MoreProducts = () => {
         
                 loadData();
                 
+                
                 setNormalState(true);  
                 crescenteTrueOrFalse.current.checked = false;
                 priceTrueOrFalse.current.checked = false;
                 popularTrueOrFalse.current.checked = false;
                 
             }
-
+            
         }, [crescenteState, popularidadeState, priceState, setDataResponse,
-            setNormalState]);
+            setNormalState, inputValue, setArrayTrueOrFalse]);
 
+            
+        //     React.useEffect(()=>{
+        //         if(inputValue === ""){
+        //              async function loadData(){
+        //                  const response = await fetch('http://localhost:3535/server');
+        //                 const data = await response.json();
+        //                 setDataResponse(data);  
+        //             }
 
-        React.useEffect(()=>{
-            if(inputValue === ""){
-                     async function loadData(){
-                        const response = await fetch('http://localhost:3535/server');
-                        const data = await response.json();
-                        setDataResponse(data);  
-                    }
-
-                    loadData();
+        //             setArrayTrueOrFalse(false)
+        //             loadData();
                     
-                    setArrayTrueOrFalse(false)
-                    setNormalState(true);  
-                    crescenteTrueOrFalse.current.checked = false;
-                    priceTrueOrFalse.current.checked = false;
-                    popularTrueOrFalse.current.checked = false;
-            }
-        }, [inputValue, setDataResponse, setNormalState, setArrayTrueOrFalse])
+        //             setNormalState(true);  
+        //             crescenteTrueOrFalse.current.checked = false;
+        //             priceTrueOrFalse.current.checked = false;
+        //             popularTrueOrFalse.current.checked = false;
+        //     }
+        // }, [inputValue, setDataResponse, setNormalState, setArrayTrueOrFalse])
         
 
         function activeCrescente(){
