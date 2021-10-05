@@ -10,25 +10,26 @@ import ButtonCheckOut from '../Buttons/ButtonCheckOut';
 
 const ContainerCarItems = () => {
 
-    const { countCar, setCountCar, arrayCar, frete,
-         clickedInCar, setFrete, total, setTotal, valorDasCompras, setValorDasCompras, 
-        } = React.useContext(GlobalContext);
+    const { countCar, setCountCar, arrayCar,
+         clickedInCar } = React.useContext(GlobalContext);
 
+        
+
+ 
+       const total = Number(arrayCar.reduce((acc, item) => 
+        acc + item.price, 0).toFixed(2))
+        + Number((10 * arrayCar.length).toFixed(2));
+        
+        const valorDasCompras = arrayCar.reduce((acc, item) => 
+        acc + item.price, 0).toFixed(2);
+    
+        const frete = 10 * arrayCar.length.toFixed(2);
    
-
-         setTotal(Number(arrayCar.reduce((acc, item) => 
-         acc + item.price, 0).toFixed(2))
-         + Number((10 * arrayCar.length).toFixed(2)));
-     
-         setValorDasCompras(arrayCar.reduce((acc, item) => 
-         acc + item.price, 0).toFixed(2));
-     
-         setFrete(10 * arrayCar.length.toFixed(2));
 
 
     function removeItemArray(event){
-        arrayCar.splice(event.target.id, 1);
-        setCountCar(countCar - 1);
+            arrayCar.splice(event.target.id, 1);
+            setCountCar(countCar - 1);
     }
 
     return (

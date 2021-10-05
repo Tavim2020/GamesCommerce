@@ -20,13 +20,13 @@ export const GlobalStorage = ({children}) => {
     const [inputValue, setInputValue] = React.useState('');
     const [arraySearch, setArraySearch] = React.useState([]);
     const [arrayTrueOrFalse, setArrayTrueOrFalse] = React.useState(false);
-    const [frete, setFrete] = React.useState('');
+    
     const [confirmLogOut, setConfirmLogOut] = React.useState(false);
     const [avatar, setAvatar] = React.useState('');
-    const [valorDasCompras, setValorDasCompras] = React.useState('');
+    
 
 
-    const [total, setTotal] = React.useState('');
+    
     
 
     
@@ -63,16 +63,10 @@ export const GlobalStorage = ({children}) => {
             setArraySearch,
             arrayTrueOrFalse, 
             setArrayTrueOrFalse,
-            frete,
-            setFrete,
             confirmLogOut, 
             setConfirmLogOut,
             avatar, 
             setAvatar,
-            total, 
-            setTotal,
-            valorDasCompras, 
-            setValorDasCompras,
         }}>
             {children}
         </GlobalContext.Provider>
