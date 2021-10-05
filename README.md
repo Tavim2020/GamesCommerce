@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+Desafio ReactJs/React Native
+O desafio consiste em construir a interface de um ecommerce de games utilizando ReactJs ou React Native.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Requisitos
 
-## Available Scripts
+·  Os produtos devem ser renderizados dinamicamente através do products.json anexado, assets.zip anexados no e-mail.
+·  Os valores exibidos no checkout (frete, subtotal e total) devem ser calculados dinamicamente
+·  O usuário poderá adicionar e remover produtos do carrinho
+·  O usuário poderá ordenar os produtos por preço, popularidade (score) e ordem alfabética.
+·  A cada produto adicionado, deve-se somar R$ 10,00 ao frete.
+·  O frete é grátis para compras acima de R$ 250,00.
 
-In the project directory, you can run:
+Observação:
+·  Caso a aplicação seja desenvolvida em React Native, será obrigatório a utilização de expo e deve ser gerado o APK e adicionado do repositório.
 
-### `yarn start`
+O que iremos avaliar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Levaremos em conta os seguintes critérios:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+·  Cumprimento dos requisitos
+·  Qualidade do layout e fluidez da UX
+·  Organização do código e boas práticas
+·  Domínio das linguagens, bibliotecas e ferramentas utilizadas
+·  Organização dos commits
+·  Escrita e cobertura de testes
+·  Gerenciamento de estado
 
-### `yarn test`
+Sobre a entrega
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O prazo para entrega do
+projeto é para dia 06/10/2021 às 23:59h.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para inicializar o projeto ao baixar a pasta com os arquivos
+utilize os comandos:
+### npm install 
+Para baixar as dependências do projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### npm run server
+Para inicializar o servidor para rendenizar os games via server.
 
-### `yarn eject`
+### npm start
+Para inicializar o projeto que será rodado no http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### FireBase
+Caso queira fazer login utilizando firebase, basta descomentar na pasta services todo o código e após descomentar criar na raiz do projeto um arquivo .env com as credenciais do firebase para authenticacão.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Variáveis ambientes necessárias para firebase no arquivo .env:
+REACT_APP_API_KEY="SUAS CREDENCIAIS"
+REACT_APP_AUTH_DOMAIN="SUAS CREDENCIAIS"
+REACT_APP_PROJECT_ID="SUAS CREDENCIAIS"
+REACT_APP_STORAGE_BUCKET="SUAS CREDENCIAIS"
+REACT_APP_MESSAGING_SENDER_ID="SUAS CREDENCIAIS"
+REACT_APP_APP_ID="SUAS CREDENCIAIS"
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Seguindo o processo para login com firebase, ir na pasta ButtonGoogle  que fica na pasta components e descomentar as seguintes linhas:
 
-## Learn More
+- 5;
+-11;
+-13;
+-16;
+-21~36;
+-48;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
